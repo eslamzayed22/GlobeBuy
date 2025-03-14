@@ -1,0 +1,73 @@
+{
+    "navbar" :{
+        "GlobeBuy" : "GlobeBuy",
+        "home": "Home",
+        "products": "Products",
+        "categories": "Categories",
+        "about": "About",
+        "search_placeholder": "What are you looking for?",
+        "wishlist": "Wishlist",
+        "cart": "Cart",
+        "my_account": "My Account",
+        "my_orders": "My Orders",
+        "logout": "LogOut",
+        "login": "login"
+        },
+    "header" : {
+        "summer_sale": "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! ShopNow",
+        "shopnow" : "ShopNow",
+        "english": "English",
+        "arabic": "Arabic"
+    },
+    "footer" : {
+        "globeBuy": "GlobeBuy",
+        "subscribe": "Subscribe",
+        "discount_offer": "Get 10% off your first order",
+        "support": "Support",
+        "address": "111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.",
+        "email": "globebuy@gmail.com",
+        "phone": "1934",
+        "account": "Account",
+        "manage_account": "Manage your Account",
+        "cart": "Cart",
+        "wishlist": "Wishlist",
+        "download_app": "Download App"
+    },
+    "categories": {
+        "categories": "Categories",
+        "browse_by_category": "Browse By Category",
+        "electronics": "Electronics",
+        "mobiles": "Mobiles",
+        "beauty_health": "Beauty & Health",
+        "books": "Books",
+        "home": "Home",
+        "baby_toys": "Baby & Toys",
+        "supermarket": "SuperMarket",
+        "womens_fashion": "Women's Fashion",
+        "mens_fashion": "Men's Fashion",
+        "music": "Music"
+    },
+    "products" : {
+        "our_products": "Our Products",
+        "explore_our_products": "Explore Our Products",
+        "new": "New",
+        "addtocart" : "Add To Cart"
+        
+    },
+    "cart": {
+        "product": "Product",
+        "price": "Price",
+        "quantity": "Quantity",
+        "cart_total": "Cart Total",
+        "subtotal": "Subtotal:",
+        "shipping": "Shipping:",
+        "free_shipping": "free",
+        "total": "Total:",
+        "return_to_shop": "Return To Shop",
+        "clear_your_cart": "Clear Your Cart",
+        "proceed_to_checkout": "Proceed to Checkout"
+    },
+    "viewAllCategories" : "View All Categories",
+    "viewAllProducts" : "View All Products"
+
+}  

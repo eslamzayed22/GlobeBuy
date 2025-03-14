@@ -1,0 +1,15 @@
+.search-icon {
+    margin: 3px 10px 0 5px;
+}
+.form-control {
+    font-size: 12px;
+    padding: 0;
+}
+.dropdown-item {
+    font-size: 12px;
+}
+@media (max-width: 640px  ) {
+    .navbar .side-nav li {
+        margin-bottom: 5px;
+    }
+}

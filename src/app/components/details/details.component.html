@@ -1,0 +1,64 @@
+<section class="my-4">
+    <div class="container">
+        <p class="path m-0"> <span class=" text-secondary me-2 ">{{detalisProduct.category.name}}</span> /   <span class=" text-secondary mx-2">{{detalisProduct.brand.name}}</span> / <span class="fw-bold ms-2">{{detalisProduct.title.split(" ",3).join(" ")}}</span></p>
+        <div class="row align-items-center custom-reverse ">
+            <div class="col-md-2">
+                <div class="allImgs d-flex flex-column-reverse align-items-center">
+                    @for (image of detalisProduct.images.slice(0, 4); track detalisProduct.id) {
+                        <div class="w-50">
+                        <img [src]="image" alt="" class="w-100 cursor-pointer" (click)="selectedImage = image">
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="main-img">
+                    <img [src]="selectedImage || detalisProduct.imageCover" alt="" class="w-100">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="my-3">
+                    <h6 class=" cart-title fw-semibold"> {{detalisProduct.title}} </h6>
+                    <div class="phone-img d-none">
+                        <img [src]="selectedImage || detalisProduct.imageCover" alt="" class="w-100">
+                    </div>
+                    <div class="d-flex">
+                        <div class="rating">
+                            @for (num of [1,2,3,4,5].slice(0 , detalisProduct.ratingsAverage); track $index){
+                                <i class="fa fa-star rating-color pe-2"></i>
+                            }
+                            @if (detalisProduct.ratingsAverage % 1 !== 0) {
+                                <i class="fa-regular fa-star-half-stroke rating-color"></i>
+                            }
+                        </div>
+                        <p class="text-success"> <span class="mx-3 text-black">|</span> {{ detalisProduct.quantity > 0 ? 'In Stock' : 'Out of Stock' }} ({{detalisProduct.quantity}})</p>
+                    </div>
+                    <p class="m-0 my-2 fw-bolder"> {{detalisProduct.price}} EGP</p>
+                    <p> {{detalisProduct.description.split(" ",30).join(" ")}} </p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="addcart-btn btn bg-main text-white w-100 py-2 my-2" (click)="addCart(detalisProduct.id)" ><i class="fa-solid fa-cart-shopping me-1"></i>Add To Cart</button>
+                    <i class="fa-regular fa-heart fs-1 cursor-pointer border border-secondary border-opacity-50 px-1"></i>
+                </div>
+                <div class="border border-secondary p-3 border-bottom-0 mt-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-truck fs-1"></i>
+                        <div class="ms-3">
+                            <p class="mb-2 fs-5">Free Delivery</p>
+                            <p class="mt-2 mb-0 small-text">Enter your postal code for Delivery Availability</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-secondary p-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-rotate fs-1"></i>
+                        <div class="ms-3">
+                            <p class="mb-2 fs-5">Return Delivery</p>
+                            <p class="mt-2 mb-0 small-text">Free 30 Days Delivery Returns. Details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

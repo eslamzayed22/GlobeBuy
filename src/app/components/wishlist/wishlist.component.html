@@ -1,0 +1,36 @@
+<section>
+    <div class="container">
+        <div class="my-5">
+            <div class="head my-4">
+                <div class="d-flex align-items-center mb-1">
+                    <div class="start-sec"></div>
+                    <h6 class="sec-title text-main mx-2 my-0 fw-semibold">WishList</h6>
+                </div>
+                <h3 class="fw-bold mt-3">Explore Your WishList</h3> 
+            </div>
+            @for (wish of wishlistDetails; track wish._id) {
+                <div class="row g-5 border-bottom border-dark">
+                    <div class="col-md-4 col-12">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img [src]="wish.imageCover" [alt]="wish.title" class="w-50 me-2">
+                            <h6 class=""> {{wish.title.split(" ", 2).join(" ")}} </h6>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 align-content-center">
+                        <div class="d-flex justify-content-around align-items-center">
+                            <p class="text-center m-0"> {{wish.price | currency}} </p>
+                            <button (click)="removeWishItem(wish._id)" class="btn btn-sm m-0 p-0 text-danger " >
+                                <i class="fa fa-trash"></i>Remove
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 align-content-center">
+                        <div class="w-50 mx-auto">
+                            <button class="addcart-btn btn bg-black text-white w-100 py-2 my-2" (click)="addCart(wish.id)"><i class="fa-solid fa-cart-shopping mx-1"></i>{{"products.addtocart" | translate }}</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

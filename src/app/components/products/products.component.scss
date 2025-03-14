@@ -1,0 +1,18 @@
+@media (max-width: 640px  ) {
+    .main-slider .categories {
+        display: none;
+    }
+    .main-slider img {
+        height: 200px;
+    }
+    .product-img img {
+        width: 100%;
+        
+    }
+    .categories-slider img {
+        height: 280px !important;
+    }
+    .product-img img {
+        height: 380px !important;
+    }
+}

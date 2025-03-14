@@ -30,9 +30,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-spinner/animations/ball-zig-zag-deflect.css",
+              "node_modules/ngx-spinner/animations/line-spin-clockwise-fade.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -102,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c02be96a-e9bc-4fd7-a4bc-c610c6322f12"
   }
 }

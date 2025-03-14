@@ -1,0 +1,26 @@
+.fa-heart {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.path , .small-text {
+    font-size: 12px;
+}
+
+@media (max-width: 440px  ) {
+    .allImgs {
+        flex-direction:row-reverse !important;
+        margin-top: 15px;
+    }
+    .w-50 {
+        width: 25%;
+    }
+    .custom-reverse{
+        flex-direction: column-reverse !important;
+    }
+    .phone-img {
+        display: block !important;
+    }
+    .main-img {
+        display: none !important;
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "navbar" : {
+        "GlobeBuy" : "جلوب باي",
+        "home": "الصفحة الرئيسية",
+        "products": "المنتجات",
+        "categories": "الفئات",
+        "about": "حول",
+        "search_placeholder": "ماذا تبحث عن؟",
+        "my_account": "حسابي",
+        "my_orders": "طلباتي",
+        "logout": "تسجيل الخروج",
+        "login": "تسجيل الدخول"
+        },
+        "header": {
+            "summer_sale": "عروض الصيف على جميع ملابس السباحة والتوصيل السريع المجاني - خصم %50",
+            "shopnow" : "تسوق الان",
+            "english": "العربية"
+        },
+    "footer" : {
+        "globeBuy": "جلوب باي",
+        "subscribe": "اشترك",
+        "discount_offer": "احصل على خصم %10 على أول طلب لك",
+        "support": "الدعم",
+        "address": "111 بيجوي ساراني، دكا، DH 1515، بنغلاديش.",
+        "email": "globebuy@gmail.com",
+        "phone": "1934",
+        "account": "الحساب",
+        "manage_account": "إدارة حسابك",
+        "cart": "عربة التسوق",
+        "wishlist": "قائمة الرغبات",
+        "download_app": "تحميل التطبيق"
+    },
+    "categories": {
+        "categories": "الفئات",
+        "browse_by_category": "تصفح حسب الفئة",
+        "electronics": "إلكترونيات",
+        "mobiles": "هواتف محمولة",
+        "beauty_health": "الجمال والصحة",
+        "books": "كتب",
+        "home": "المنزل",
+        "baby_toys": "ألعاب الأطفال",
+        "supermarket": "السوبر ماركت",
+        "womens_fashion": "أزياء النساء",
+        "mens_fashion": "أزياء الرجال",
+        "music": "موسيقى"
+    },
+    "products" : {
+        "our_products": "منتجاتنا",
+        "explore_our_products": "استكشف منتجاتنا",
+        "new": "جديد",
+        "addtocart" : "أضف إلى السلة"
+    },
+    "cart": {
+        "product": "المنتج",
+        "price": "السعر",
+        "quantity": "الكمية",
+        "cart_total": "إجمالي العربة",
+        "subtotal": "المجموع الفرعي:",
+        "shipping": "الشحن:",
+        "free_shipping": "مجانًا",
+        "total": "المجموع:",
+        "return_to_shop": "العودة إلى المتجر",
+        "clear_your_cart": "مسح العربة",
+        "proceed_to_checkout": "التوجه إلى الدفع"
+    },
+    "viewAllCategories" : "عرض جميع الفئات",
+    "viewAllProducts" : "عرض جميع المنتجات"
+}

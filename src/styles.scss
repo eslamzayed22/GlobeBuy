@@ -1,1 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
+:root {
+    --main-color: #DB4444;
+    --text-one: #555758;
+    --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+    --font-family: "Inter", serif;
+    --rating-color: #ffc908;
+}
+body {
+    font-family: var(--font-family) !important;
+}
+
+.nav-link {
+    transition: unset !important;
+    color: black !important;
+    padding:0 !important;
+    margin:0 15px;
+}
+.active-link {
+border-bottom: #000 1px solid;
+}
+.rating-color {
+    color: var(--rating-color);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+.borderbott {
+    border: none;
+    border-bottom: 1px solid #d0d1d1;
+}
+.product {
+    
+    transition: box-shadow 0.5s;
+    overflow: hidden;
+}
+
+.font-sm {
+    font-size: 12px;
+}
+.text-main {
+    color: var(--main-color);
+}
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+.btn-main {
+    background-color: var(--main-color) ;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.btn-main:hover {
+    background-color: #E07575;
+    color: white;
+}
+
+.btn-main:disabled {
+    cursor: not-allowed;
+    background-color: #E07575;
+    color: white;
+}
+.btn-main:disabled:hover {
+    background-color: #ccc;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color:unset !important; 
+}
+.dropdown-menu .dropdown-item:hover {
+    color: var(--main-color) !important; 
+}
+.dropdown-menu{
+    min-width: unset !important;
+
+}
+.main-slider .owl-nav {
+    margin: 0 !important;
+    position: relative;
+    top: -34px;
+}
+
+.main-slider .owl-prev, .main-slider .owl-next{
+    padding: 0px !important;
+    width: 8px; 
+    height: 8px;  
+    border-radius: 50%;
+}
+.main-slider .owl-theme .owl-nav [class*=owl-]:hover{
+    background-color: var(--main-color);
+}
+
+.categories-slider .owl-nav {
+    position: absolute;
+    top: -52px;
+    right: 0;
+}
+
+.categories-slider .owl-theme .owl-nav [class*=owl-] {
+    color: #000;
+    background: none;
+}
+.start-sec {
+    width: 20px;
+    height: 38px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+}
+
+.product .fa-heart {
+    color: var(--text-one) ;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+}
+.fa-eye {
+    color: var(--text-one) ;
+    position: absolute;
+    top: 40px;
+    right: 6px;
+}
+.new-discount {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 35px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: var(--main-color);
+}
+.new-discount p {
+    font-size: 13px;
+}
+
+.product-img {
+    width: 200px;
+    height: 300px;
+}
+.addcart-btn {
+    border-radius: 0 0 6px 6px;
+}
+.cart-title {
+    font-size: 20px;
+}
+.wish {
+    color: #b1b5b7 !important ;
+}
+.wish-active{
+    color: var(--main-color) !important;
+}
+.badge {
+    border-radius: 50%;
+    position: absolute;
+    top: -11px;
+    right: -15px;
+}

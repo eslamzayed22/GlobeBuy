@@ -1,0 +1,16 @@
+<section class="bg-black">
+    <div class="container">
+        <div class="d-flex justify-content-around p-2">
+            <p class="text-white m-0">{{"header.summer_sale" | translate }} <a class=" text-white border-bottom mx-2 cursor-pointer">{{"header.shopnow" | translate }}</a></p>
+            <div class="dropdown">
+                <p class="text-white m-0 dropdown-toggle cursor-pointer" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{"header.english" | translate }}
+                </p>
+                <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
+                    <li  (click)="change('en')" ><a [class.text-main]="_TranslateService.currentLang == 'en' " class="dropdown-item" href="#" >En</a></li>
+                    <li  (click)="change('ar')"><a [class.text-main]="_TranslateService.currentLang == 'ar' " class="dropdown-item" href="#" >Ar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
