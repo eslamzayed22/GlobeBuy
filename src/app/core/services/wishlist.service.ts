@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
@@ -10,7 +10,10 @@ export class WishlistService {
 
   private readonly _HttpClient = inject(HttpClient)
 
-    wishNumber : BehaviorSubject<number> = new BehaviorSubject(0)
+    // wishNumber : BehaviorSubject<number> = new BehaviorSubject(0)
+      // Or ↓↓↓
+    wishNumber : WritableSignal<number> =signal(0)
+    
   
     
   addToWishlist(id:string):Observable<any> {

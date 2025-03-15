@@ -47,7 +47,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
         // console.log(res);
         this._ToastrService.warning('Item removed from wishlist');
         this.getAllWishlistItems(); 
-        this._WishlistService.wishNumber.next(res.data.length)
+        this._WishlistService.wishNumber.set(res.data.length)
       }
     });
   }
@@ -56,7 +56,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
       next:(res)=>{
         // console.log(res);
         this._ToastrService.success(res.message)
-        this._CartService.cartNumber.next(res.numOfCartItems)
+        this._CartService.cartNumber.set(res.numOfCartItems)
       }
     })
   }

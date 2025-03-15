@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit , OnDestroy {
       next:(res)=>{
         // console.log(res);
         this._ToastrService.success(res.message)
-        this._CartService.cartNumber.next(res.numOfCartItems)
+        this._CartService.cartNumber.set(res.numOfCartItems)
       }
     })
   }
@@ -116,7 +116,7 @@ export class HomeComponent implements OnInit , OnDestroy {
         console.log(res.data.length);
         this._ToastrService.success(res.message)
         this.wishlistData =res.data
-        this._WishlistService.wishNumber.next(res.data.length)
+        this._WishlistService.wishNumber.set(res.data.length)
       },
       error:(err)=>{
         console.log(err);
@@ -130,7 +130,7 @@ export class HomeComponent implements OnInit , OnDestroy {
         // console.log(res);
         this.wishlistData =res.data
         this._ToastrService.warning('Item removed from wishlist');
-        this._WishlistService.wishNumber.next(res.data.length)
+        this._WishlistService.wishNumber.set(res.data.length)
       },
       error:(err)=>{
         console.log(err);
