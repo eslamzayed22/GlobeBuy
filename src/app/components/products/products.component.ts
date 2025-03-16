@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, WritableSignal, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductsService } from '../../core/services/products.service';
 import { IProduct } from '../../core/interfaces/iproduct';
@@ -25,21 +25,21 @@ export class ProductsComponent implements OnInit, OnDestroy {
   private readonly _ToastrService = inject(ToastrService)
   
   
-  productList: IProduct[] = [];
-  wishlistData:string[]=[]
+  productList : WritableSignal<IProduct[]> = signal([])
+  wishlistData : WritableSignal<string[]> = signal([])
   getAllProductSub!: Subscription;
   searchQuery: string = '';
 
   ngOnInit(): void {
     this.getAllProductSub = this._ProductsService.getAllProducts().subscribe({
       next: (res) => {
-        this.productList = res.data;
+        this.productList.set( res.data);
       }
     });
     this._WishlistService.getProductsWishlist().subscribe({
       next:(res)=>{
         // console.log(res);
-        this.wishlistData = res.data.map((product:any)=>product._id)
+        this.wishlistData.set(res.data.map((product:any)=>product._id));
       }
     })
     //  queryParams قراءة قيمة البحث من الـ
@@ -66,7 +66,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       next:(res)=>{
         // console.log(res);
         this._ToastrService.success(res.message)
-        this.wishlistData =res.data
+        this.wishlistData.set(res.data);
         this._WishlistService.wishNumber.set(res.data.length)
       }
     })
@@ -75,7 +75,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this._WishlistService.deleteSpecificItem(id).subscribe({
       next:(res)=>{
         // console.log(res);
-        this.wishlistData =res.data
+        this.wishlistData.set(res.data);
         this._ToastrService.warning('Item removed from wishlist');
         this._WishlistService.wishNumber.set(res.data.length)
       }

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { OrdersService } from '../../core/services/orders.service';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Iallorders } from '../../core/interfaces/iallorders';
@@ -13,12 +13,13 @@ import { Iallorders } from '../../core/interfaces/iallorders';
 export class AllordersComponent implements OnInit {
   private readonly _OrdersService = inject(OrdersService)
 
-  orders: Iallorders[] = [];
+  // orders: Iallorders[] = [];
+  orders: WritableSignal<Iallorders[]> = signal([])
 
   ngOnInit(): void {
     this._OrdersService.getUserOrders().subscribe({
       next:(res)=>{
-        this.orders = res; 
+        this.orders.set(res); 
         // console.log(res);
       }
     })

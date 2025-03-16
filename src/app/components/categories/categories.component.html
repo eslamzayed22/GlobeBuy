@@ -10,7 +10,7 @@
             }}</h3>
     </div>
     <div class="row g-4">
-        @for (category of categoryList.slice().reverse(); track category._id) {
+        @for (category of categoryList().slice().reverse(); track category._id) {
         <div class="col-md-3">
             <div class="p-3 border border-secondary-subtle rounded-2">
                 <img [src]="category.image" [alt]="category.name" height="250px"

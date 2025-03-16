@@ -11,7 +11,7 @@
                 <p>{{"cart.quantity" | translate}}</p>
             </div>
         </div>
-        @for (item of cartDetails.products; track item.product.id) {
+        @for (item of cartDetails().products; track item.product.id) {
         <div class="row g-5">
             <div class="col-md-4 col-4">
                 <div class="d-flex align-items-center">
@@ -46,7 +46,7 @@
                 <div
                     class="d-flex justify-content-between mb-3 pb-2 border-bottom border-secondary">
                     <p>{{"cart.subtotal" | translate}}:</p>
-                    <p>{{cartDetails.totalCartPrice | currency}}</p>
+                    <p>{{cartDetails().totalCartPrice | currency}}</p>
                 </div>
                 <div
                     class="d-flex justify-content-between mb-3 pb-2 border-bottom border-secondary">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="d-flex justify-content-between mb-3">
                     <p>{{"cart.total" | translate}}:</p>
-                    <p>{{cartDetails.totalCartPrice | currency}}</p>
+                    <p>{{cartDetails().totalCartPrice | currency}}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div>
@@ -67,7 +67,7 @@
                             translate}}</button>
                     </div>
                     <button class="btn btn-main mb-2"
-                        [routerLink]="['/orders', cartDetails._id]">{{"cart.proceed_to_checkout"
+                        [routerLink]="['/orders', cartDetails()._id]">{{"cart.proceed_to_checkout"
                         | translate}}</button>
                 </div>
             </div>

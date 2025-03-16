@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <owl-carousel-o [options]="customOptionsCat">
-            @for (category of categoryList.slice().reverse(); track
+            @for (category of categoryList().slice().reverse(); track
             category._id) {
             <ng-template carouselSlide>
                 <div class="p-3 mx-2 border border-secondary-subtle rounded-2">
@@ -57,7 +57,7 @@
             }}</h3>
     </div>
     <div class="row g-5">
-        @for (product of productList.slice().reverse().slice(0,8) ; track
+        @for (product of productList().slice().reverse().slice(0,8) ; track
         product.id) {
         <div class="col-md-3">
             <div class="product p-2 position-relative">
@@ -67,11 +67,11 @@
                     <img [src]="product.imageCover" [alt]="product.title"
                         class="w-100" height="280px">
                 </div>
-                @if (!wishlistData.includes(product.id)) {
+                @if (!wishlistData().includes(product.id)) {
                 <i (click)="addToWishlist(product.id)"
                     class="fa-solid fa-heart fs-5 cursor-pointer wish"></i>
                 }
-                @if (wishlistData.includes(product.id)) {
+                @if (wishlistData().includes(product.id)) {
                 <i (click)="removeFromWishlist(product.id)"
                     class="fa-solid fa-heart fs-5 cursor-pointer wish-active overflow-hidden"></i>
                 }

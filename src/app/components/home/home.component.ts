@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductsService } from '../../core/services/products.service';
 import { IProduct } from '../../core/interfaces/iproduct';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit , OnDestroy {
   
   private readonly _ToastrService = inject(ToastrService)
   
-  productList:IProduct[] = []
-  categoryList:ICategory[] = []
-  wishlistData:string[]=[]
-  getAllProductSub !: Subscription
+  productList : WritableSignal<IProduct[]> = signal([])
+  categoryList : WritableSignal<ICategory[]> = signal([])
+  wishlistData : WritableSignal<string[]> = signal([])
 
+  getAllProductSub !: Subscription
   
   customOptions: OwlOptions = {
     loop: true,
@@ -80,20 +80,20 @@ export class HomeComponent implements OnInit , OnDestroy {
     // show Loading screen 
     this._CategoriesService.getAllCategories().subscribe({
       next:(res)=>{
-        this.categoryList = res.data;
+        this.categoryList.set( res.data);
         // console.log(res.data);
       }
     })
     this.getAllProductSub = this._ProductsService.getAllProducts().subscribe({
       next:(res)=>{
         // console.log(res.data);
-        this.productList = res.data; 
+        this.productList.set(res.data); 
       }
     })
     this._WishlistService.getProductsWishlist().subscribe({
       next:(res)=>{
         // console.log(res);
-        this.wishlistData = res.data.map((product:any)=>product._id)
+        this.wishlistData.set( res.data.map((product:any)=>product._id));
       }
     })
   }
@@ -110,12 +110,13 @@ export class HomeComponent implements OnInit , OnDestroy {
       }
     })
   }
+
   addToWishlist(id:string):void {
     this._WishlistService.addToWishlist(id).subscribe ({
       next:(res)=>{
         console.log(res.data.length);
         this._ToastrService.success(res.message)
-        this.wishlistData =res.data
+        this.wishlistData.set(res.data);
         this._WishlistService.wishNumber.set(res.data.length)
       },
       error:(err)=>{
@@ -128,7 +129,7 @@ export class HomeComponent implements OnInit , OnDestroy {
     this._WishlistService.deleteSpecificItem(id).subscribe({
       next:(res)=>{
         // console.log(res);
-        this.wishlistData =res.data
+        this.wishlistData.set(res.data);
         this._ToastrService.warning('Item removed from wishlist');
         this._WishlistService.wishNumber.set(res.data.length)
       },

@@ -8,7 +8,7 @@
             </div>
             <h3 class="fw-bold mt-3">Explore Your WishList</h3>
         </div>
-        @for (wish of wishlistDetails; track wish._id) {
+        @for (wish of wishlistDetails(); track wish._id) {
         <div class="row g-5 border-bottom border-dark">
             <div class="col-md-4 col-12">
                 <div class="d-flex align-items-center justify-content-center">

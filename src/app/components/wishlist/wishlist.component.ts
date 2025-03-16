@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal, WritableSignal } from '@angular/core';
 import { WishlistService } from '../../core/services/wishlist.service';
 import { Iwishlist } from '../../core/interfaces/iwishlist';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,7 +20,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
   private readonly _CartService = inject(CartService)
   private readonly _ToastrService = inject(ToastrService)
 
-  wishlistDetails: Iwishlist[] = [];
+  wishlistDetails : WritableSignal<Iwishlist[]> = signal([])
   private getAllWishlistItem!: Subscription;
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class WishlistComponent implements OnInit, OnDestroy {
   getAllWishlistItems(): void {
     this.getAllWishlistItem = this._WishlistService.getProductsWishlist().subscribe({
       next: (res) => {
-        this.wishlistDetails = res.data;
+        this.wishlistDetails.set(res.data);
       }
     });
   }

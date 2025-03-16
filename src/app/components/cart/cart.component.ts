@@ -1,9 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CartService } from '../../core/services/cart.service';
-import { Icart } from '../../core/interfaces/icart';
 import { CurrencyPipe } from '@angular/common';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { CartService } from '../../core/services/cart.service';
+import { Icart } from './../../core/interfaces/icart';
 
 @Component({
   selector: 'app-cart',
@@ -15,12 +15,12 @@ import { TranslateModule } from '@ngx-translate/core';
 export class CartComponent implements OnInit {
   private readonly _CartService = inject(CartService)
   
-  cartDetails : Icart = {} as Icart
+  cartDetails : WritableSignal<Icart> = signal<Icart>({} as Icart);
 
   ngOnInit(): void {
     this._CartService.getProductsCart().subscribe({
       next:(res)=>{
-        this.cartDetails = res.data
+        this.cartDetails.set(res.data);
         // console.log(res.data);
       }
     })
@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
   updateCount(id:string , count:number) :void {
     this._CartService.updateProductQuantity(id , count).subscribe({
       next:(res)=>{
-        this.cartDetails = res.data
+        this.cartDetails.set(res.data);
         console.log(res);
         this._CartService.cartNumber.set(res.numOfCartItems)
       }
@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
       next:(res)=>{
         console.log(res);
         if(res.message == "success"){
-          this.cartDetails = {} as Icart;
+          this.cartDetails.set({} as Icart);
         this._CartService.cartNumber.set(0)
         }
       }
