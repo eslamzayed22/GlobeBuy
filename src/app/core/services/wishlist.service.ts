@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal, WritableSignal } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { effect, inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -14,6 +14,11 @@ export class WishlistService {
       // Or ↓↓↓
     wishNumber : WritableSignal<number> =signal(0)
     
+    constructor(){
+        effect(()=>{
+          localStorage.setItem('wishlistItem', this.wishNumber().toString())
+        })
+      }
   
     
   addToWishlist(id:string):Observable<any> {
