@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-4 col-4 align-content-center">
                 <div class="d-flex justify-content-center align-items-center">
-                    <div class="count-box d-flex justify-content-between">
+                    <div class="count-box sm-border d-flex justify-content-between">
                         <p>{{item.count}}</p>
                         <div class="arrows d-flex flex-column">
                             <i
@@ -41,7 +41,7 @@
         </div>
         }
         <div class="card-total">
-            <div class="bord p-3 my-4">
+            <div class="sm-border p-3 my-4">
                 <h5>{{"cart.cart_total" | translate}}</h5>
                 <div
                     class="d-flex justify-content-between mb-3 pb-2 border-bottom border-secondary">
@@ -59,10 +59,10 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div>
-                        <button class="btn bord mx-2 mb-2"
+                        <button class="btn sm-border mx-2 mb-2"
                             routerLink="/products">{{"cart.return_to_shop" |
                             translate}}</button>
-                        <button class="btn bord mb-2"
+                        <button class="btn sm-border mb-2"
                             (click)="clearUserCart()">{{"cart.clear_your_cart" |
                             translate}}</button>
                     </div>

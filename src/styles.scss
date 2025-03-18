@@ -16,14 +16,11 @@ $rating-color: #ffc908;
 body {
     font-family: $main-font !important;
 }
-
+a {
+    text-decoration: none;
+}
 .cursor-pointer {
     cursor: pointer;
-}
-a,
-a:hover {
-    color: black;
-    text-decoration: none;
 }
 .rating-color {
     color: $rating-color;
@@ -48,19 +45,17 @@ a:hover {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.5s;
+    &:hover {
+        background-color: #E07575;
+        color: white;
+    }
 }
-.btn-main:hover {
-    background-color: #E07575;
-    color: white;
-}
+
 .btn-main:disabled {
-    cursor: not-allowed;
     background-color: #E07575;
     color: white;
 }
-.btn-main:disabled:hover {
-    background-color: #ccc;
-}
+
 .start-sec {
     width: 20px;
     height: 38px;
@@ -111,6 +106,7 @@ a:hover {
     h5,p,i {
         color: white;
         margin: 5px 0;
+
     }
     .qr {
         width: 60px;
@@ -129,14 +125,10 @@ a:hover {
     }
 }
 //home styles
-.dropdown-menu .dropdown-item:active {
-    background-color:unset !important; 
-}
-.dropdown-menu .dropdown-item:hover {
-    color: $main-color !important; 
-}
-.dropdown-menu{
-    min-width: unset !important;
+.dropdown-menu .dropdown-item{
+    &:hover {
+        color: $main-color !important; 
+    }
 }
 .main-slider .owl-nav {
     margin: 0 !important;
@@ -256,14 +248,12 @@ a:hover {
     }
     .count-box {
         width: 55px;
-        border: 1px solid #3e3c3c;
-        border-radius: 5px;
         padding: 5px 10px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .bord {
+    .sm-border {
         border: 1px solid #3e3c3c;
         border-radius: 5px;
     }
