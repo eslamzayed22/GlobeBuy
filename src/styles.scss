@@ -4,17 +4,17 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import 'ngx-toastr/toastr';
 
-:root {
-    --main-color: #DB4444;
-    --text-one: #555758;
-    --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
-    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
-    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
-    --font-family: "Inter", serif;
-    --rating-color: #ffc908;
-}
+
+$main-color: #DB4444;
+$text-one: #555758;
+$shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+$main-font: "Inter", serif;
+$rating-color: #ffc908;
+
 body {
-    font-family: var(--font-family) !important;
+    font-family: $main-font !important;
 }
 
 .cursor-pointer {
@@ -26,9 +26,8 @@ a:hover {
     text-decoration: none;
 }
 .rating-color {
-    color: var(--rating-color);
+    color: $rating-color;
 }
-
 .borderbott {
     border: none;
     border-bottom: 1px solid #d0d1d1;
@@ -37,13 +36,13 @@ a:hover {
     font-size: 12px;
 }
 .text-main {
-    color: var(--main-color);
+    color: $main-color;
 }
 .bg-main {
-    background-color: var(--main-color) !important;
+    background-color: $main-color !important;
 }
 .btn-main {
-    background-color: var(--main-color) ;
+    background-color: $main-color ;
     padding: 7px 20px;
     border-radius: 5px;
     color: #fff;
@@ -66,7 +65,7 @@ a:hover {
     width: 20px;
     height: 38px;
     border-radius: 3px;
-    background-color: var(--main-color);
+    background-color: $main-color;
 }
 //navbar styles
 .navbar {
@@ -134,7 +133,7 @@ a:hover {
     background-color:unset !important; 
 }
 .dropdown-menu .dropdown-item:hover {
-    color: var(--main-color) !important; 
+    color: $main-color !important; 
 }
 .dropdown-menu{
     min-width: unset !important;
@@ -151,7 +150,7 @@ a:hover {
     border-radius: 50%;
 }
 .main-slider .owl-theme .owl-nav [class*=owl-]:hover{
-    background-color: var(--main-color);
+    background-color: $main-color;
 }
 .categories-slider .owl-nav {
     position: absolute;
@@ -177,13 +176,13 @@ a:hover {
 // products styles
 .products {
     .fa-heart {
-        color: var(--text-one) ;
+        color: $text-one ;
         position: absolute;
         top: 4px;
         right: 5px;
     }
     .fa-eye {
-        color: var(--text-one) ;
+        color: $text-one ;
         position: absolute;
         top: 40px;
         right: 6px;
@@ -195,7 +194,7 @@ a:hover {
         width: 35px;
         height: 20px;
         border-radius: 4px;
-        background-color: var(--main-color);
+        background-color: $main-color;
     }
     .new-discount p {
         font-size: 13px;
@@ -215,7 +214,7 @@ a:hover {
         color: #b1b5b7 !important ;
     }
     .wish-active{
-        color: var(--main-color) !important;
+        color: $main-color !important;
     }
 }
 //details styles
