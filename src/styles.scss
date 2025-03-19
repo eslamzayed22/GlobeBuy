@@ -35,11 +35,14 @@ a {
 .text-main {
     color: $main-color;
 }
-.bg-main {
+.common-bg-main{
     background-color: $main-color !important;
 }
+.bg-main {
+    @extend .common-bg-main;
+}
 .btn-main {
-    background-color: $main-color ;
+    @extend .common-bg-main;
     padding: 7px 20px;
     border-radius: 5px;
     color: #fff;
@@ -57,10 +60,10 @@ a {
 }
 
 .start-sec {
+    @extend .common-bg-main;
     width: 20px;
     height: 38px;
     border-radius: 3px;
-    background-color: $main-color;
 }
 //navbar styles
 .navbar {
@@ -76,12 +79,8 @@ a {
     .search-icon {
         margin: 3px 10px 0 5px;
     }
-    .form-control {
-        font-size: 12px;
-        padding: 0;
-    }
     .dropdown-item {
-        font-size: 12px;
+        @extend .font-sm;
     }
     .badge {
         border-radius: 50%;
@@ -93,12 +92,6 @@ a {
         .side-nav li {
             margin-bottom: 5px;
         }
-    }
-}
-//header styles
-.header {
-    p {
-        font-size: 12px;
     }
 }
 //footer styles
@@ -142,7 +135,7 @@ a {
     border-radius: 50%;
 }
 .main-slider .owl-theme .owl-nav [class*=owl-]:hover{
-    background-color: $main-color;
+    @extend .common-bg-main;
 }
 .categories-slider .owl-nav {
     position: absolute;
@@ -167,15 +160,17 @@ a {
 }
 // products styles
 .products {
-    .fa-heart {
+    .common-icons-product{
         color: $text-one ;
         position: absolute;
+    }
+    .fa-heart {
+        @extend .common-icons-product;
         top: 4px;
         right: 5px;
     }
     .fa-eye {
-        color: $text-one ;
-        position: absolute;
+        @extend .common-icons-product;
         top: 40px;
         right: 6px;
     }
@@ -186,7 +181,7 @@ a {
         width: 35px;
         height: 20px;
         border-radius: 4px;
-        background-color: $main-color;
+        @extend .common-bg-main;
     }
     .new-discount p {
         font-size: 13px;
@@ -214,9 +209,6 @@ a {
     .fa-heart {
         border-radius: 5px;
         margin-left: 10px;
-    }
-    .path , .small-text {
-        font-size: 12px;
     }
 }
 @media (max-width: 440px  ) {
