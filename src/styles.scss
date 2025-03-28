@@ -92,20 +92,46 @@ a {
         .side-nav li {
             margin-bottom: 5px;
         }
+        .nav-link {
+            margin: 0;
+        }
+        .badge {
+            right: 127px;
+        }
+        .order-3 {
+            margin-top: 10px;
+        }
     }
 }
-//footer styles
+//header + footer  styles
+.header {
+    @media (max-width: 640px  ) {
+        .header-summer {
+            font-size: 6px;
+        }
+        .dropdown-toggle {
+            font-size: 8px;
+        }
+    }
+}
 .footer {
     h5,p,i {
         color: white;
         margin: 5px 0;
-
+    }
+    p {
+        font-size: 14px;
     }
     .qr {
-        width: 60px;
+        width: 50px;
     }
     .apps {
-        width: 80px;
+        width: 65px;
+    }
+    @media (max-width: 540px  ){
+        p {
+            font-size: 12px;
+        }
     }
 }
 //login , register and forget styles
@@ -249,4 +275,10 @@ a {
         border: 1px solid #3e3c3c;
         border-radius: 5px;
     }
+    @media (max-width: 440px  ) {
+        .cart-btns {
+            flex-direction: column;
+        }
+    }
 }
+

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { NgxSpinnerComponent } from 'ngx-spinner';
 
@@ -10,6 +10,25 @@ import { NgxSpinnerComponent } from 'ngx-spinner';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'GlobeBuy';
+export class AppComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // مراقبة كل التنقلات في الموقع
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.closeOffcanvas(); // إغلاق النافبار عند كل تنقل
+      }
+    });
+  }
+
+  // دالة لإغلاق النافبار الجانبي
+  private closeOffcanvas(): void {
+    setTimeout(() => {
+      const closeButton = document.querySelector('.btn-close');
+      if (closeButton) {
+        (closeButton as HTMLElement).click();
+      }
+    }, 300); // مهلة قصيرة لضمان الإغلاق بعد التنقل
+  }
 }

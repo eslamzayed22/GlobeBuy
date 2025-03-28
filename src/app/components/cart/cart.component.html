@@ -1,5 +1,5 @@
 <section class="cart">
-    <div class="m-5">
+    <div class="my-5">
         <div class="row mb-3 g-5">
             <div class="col-md-4 col-4">
                 <p>{{"cart.product" | translate}}</p>
@@ -14,10 +14,10 @@
         @for (item of cartDetails().products; track item.product.id) {
         <div class="row g-5">
             <div class="col-md-4 col-4">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center justify-content-center">
                     <img [src]="item.product.imageCover"
-                        [alt]="item.product.title" class="w-50 me-2">
-                    <h6> {{item.product.title.split(" ", 2).join(" ")}} </h6>
+                        [alt]="item.product.title" class="w-50 ms-2">
+                    <!-- <h6> {{item.product.title.split(" ", 2).join(" ")}} </h6> -->
                 </div>
             </div>
             <div class="col-md-4 col-4 align-content-center">
@@ -57,9 +57,9 @@
                     <p>{{"cart.total" | translate}}</p>
                     <p>{{cartDetails().totalCartPrice | currency}}</p>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <button class="btn sm-border mx-2 mb-2"
+                <div class="cart-btns d-flex justify-content-between">
+                    <div class="d-flex justify-content-between gap-2">
+                        <button class="btn sm-border mb-2"
                             routerLink="/products">{{"cart.return_to_shop" |
                             translate}}</button>
                         <button class="btn sm-border mb-2"
