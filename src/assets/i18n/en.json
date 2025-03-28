@@ -13,13 +13,13 @@
         "logout": "LogOut",
         "login": "login"
         },
-    "header" : {
+    "header" :{
         "summer_sale": "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! ShopNow",
         "shopnow" : "ShopNow",
         "english": "English",
         "arabic": "Arabic"
     },
-    "footer" : {
+    "footer" :{
         "globeBuy": "GlobeBuy",
         "subscribe": "Subscribe",
         "discount_offer": "Get 10% off your first order",
@@ -32,7 +32,7 @@
         "wishlist": "Wishlist",
         "download_app": "Download App"
     },
-    "categories": {
+    "categories":{
         "categories": "Categories",
         "browse_by_category": "Browse By Category",
         "electronics": "Electronics",

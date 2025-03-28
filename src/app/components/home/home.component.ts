@@ -11,19 +11,28 @@ import { CartService } from '../../core/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateModule } from '@ngx-translate/core';
 import { WishlistService } from '../../core/services/wishlist.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, RouterLink, CurrencyPipe , TranslateModule],
+  imports: [RouterLink, CurrencyPipe , TranslateModule,CarouselModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  animations:[
+    trigger('slideFadeUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(50px)', opacity: 0 }), // يبدأ من الأعلى وغير مرئي
+        animate('0.8s ease-out', style({ transform: 'translateY(0)', opacity: 1 })) // يتحرك للأسفل ويصبح مرئيًا
+      ])
+    ])
+  ]
 })
 export class HomeComponent implements OnInit , OnDestroy {
   private readonly _ProductsService = inject(ProductsService)
   private readonly _CategoriesService = inject(CategoriesService)
   private readonly _CartService = inject(CartService)
-    private readonly _WishlistService = inject(WishlistService)
+  private readonly _WishlistService = inject(WishlistService)
   
   private readonly _ToastrService = inject(ToastrService)
   
@@ -33,8 +42,8 @@ export class HomeComponent implements OnInit , OnDestroy {
 
   getAllProductSub !: Subscription
   
-  customOptions: OwlOptions = {
-    loop: true,
+  customOptionsMain: OwlOptions = {
+    loop: false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,

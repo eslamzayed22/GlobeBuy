@@ -18,7 +18,7 @@ export const routes: Routes = [
     ]},
     {path:'', component:BlankLayoutComponent  , children:[  //لو الباص فاضى ولقيت هوم هات هوم وهكذا 
         {path:'', redirectTo:'home', pathMatch:'full'}, //لو الباص فاضى هيعمل اعاده ت وجية للهوم
-        {path:'home', component:HomeComponent, },
+        {path:'home', component:HomeComponent},
         {path:'cart', loadComponent:()=> import('./components/cart/cart.component').then((c)=> c.CartComponent) ,canActivate:[authGuard]},
         {path:'wishlist', loadComponent:()=> import('./components/wishlist/wishlist.component').then((c)=> c.WishlistComponent) ,canActivate:[authGuard]},
         {path:'products', component:ProductsComponent},

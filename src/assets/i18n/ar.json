@@ -1,6 +1,6 @@
 {
-    "navbar" : {
-        "GlobeBuy" : "جلوب باي",
+    "navbar" :{
+        "GlobeBuy" : "جلوبيباي",
         "home": "الصفحة الرئيسية",
         "products": "المنتجات",
         "categories": "الفئات",
@@ -16,7 +16,7 @@
             "shopnow" : "تسوق الان",
             "english": "العربية"
         },
-    "footer" : {
+    "footer" :{
         "globeBuy": "جلوب باي",
         "subscribe": "اشترك",
         "discount_offer": "احصل على خصم %10 على أول طلب لك",

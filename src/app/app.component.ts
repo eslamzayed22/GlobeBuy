@@ -17,18 +17,18 @@ export class AppComponent implements OnInit {
     // مراقبة كل التنقلات في الموقع
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.closeOffcanvas(); // إغلاق النافبار عند كل تنقل
+        this.closeOffcanvas(); 
       }
     });
   }
 
-  // دالة لإغلاق النافبار الجانبي
+  //function to close navbar when navigate
   private closeOffcanvas(): void {
     setTimeout(() => {
       const closeButton = document.querySelector('.btn-close');
       if (closeButton) {
         (closeButton as HTMLElement).click();
       }
-    }, 300); // مهلة قصيرة لضمان الإغلاق بعد التنقل
+    }, 300);
   }
 }

@@ -1,19 +1,19 @@
 <section class="main-slider my-5  position-relative">
-    <div>
-        <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide><img src="../../../assets/Frame 560.png"
-                    alt class="w-100 p-1 img-res-mob rounded-3" height="400px">
+    <div class="main-carousel" @slideFadeUp>
+        <owl-carousel-o [options]="customOptionsMain">
+            <ng-template carouselSlide><img src="./assets/Frame 600.png"
+                    alt="njk" class="w-100 p-1 img-res-mob rounded-3" height="400px">
             </ng-template>
-            <ng-template carouselSlide><img src="../../../assets/Frame 600.png"
-                    alt class="w-100 p-1 img-res-mob rounded-3" height="400px">
+            <ng-template carouselSlide><img src="./assets/Frame 560.png"
+                    alt="" class="w-100 p-1 img-res-mob rounded-3" height="400px">
             </ng-template>
-            <ng-template carouselSlide><img src="../../../assets/Frame 685.png"
-                    alt class="w-100 p-1 img-res-mob rounded-3" height="400px">
+            <ng-template carouselSlide><img src="./assets/Frame 685.png"
+                    alt="" class="w-100 p-1 img-res-mob rounded-3" height="400px">
             </ng-template>
         </owl-carousel-o>
     </div>
 </section>
-<section class="categories-slider my-5 ">
+<section class="categories-slider my-5" @slideFadeUp>
     <div class="head mb-5">
         <div class="d-flex align-items-center mb-1">
             <div class="start-sec"></div>
@@ -30,7 +30,7 @@
             category._id) {
             <ng-template carouselSlide>
                 <div class="p-3 mx-2 border border-secondary-subtle rounded-2">
-                    <img [src]="category.image" [alt]="category.name"
+                    <img [src]="category.image" [alt]="category.name" 
                         height="150px" class="w-100 rounded-2">
                     <h5
                         class=" mt-2 fw-semibold text-center">{{category.name}}</h5>
