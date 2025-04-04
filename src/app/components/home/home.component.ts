@@ -72,8 +72,11 @@ export class HomeComponent implements OnInit , OnDestroy {
       0: {
         items: 1
       },
-      400: {
-        items: 2
+      400:{
+        items: 1
+      },
+      600: {
+        items: 3
       },
       740: {
         items: 3
